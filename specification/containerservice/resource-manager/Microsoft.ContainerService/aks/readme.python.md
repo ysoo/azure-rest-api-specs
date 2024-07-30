@@ -21,10 +21,6 @@ multiapi: true
 batch:
   - tag: package-2024-10
   - tag: package-preview-2024-10
-  - tag: package-2020-11
-  - tag: package-2020-03-01-only
-  - tag: package-2019-09-preview-only
-  - tag: package-2017-07
   - multiapiscript: true
 ```
 
