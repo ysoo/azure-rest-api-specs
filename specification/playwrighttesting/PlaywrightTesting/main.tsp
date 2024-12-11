@@ -1,3 +1,4 @@
+
 // cheat-sheet - https://microsoft.github.io/typespec/standard-library/http/cheat-sheet
 // tsp compile main.tsp --emit @azure-tools/typespec-autorest
 
@@ -44,14 +45,14 @@ namespace Microsoft.PlaywrightTesting.AuthManager;
 
 @doc("The PlaywrightTesting Auth Manager service version.")
 enum Versions {
-  @doc("Version 2024-06-01-preview")
+  @doc("Version 2024-12-01")
   @useDependency(Azure.Core.Versions.v1_0_Preview_2)
-  `2024-06-01-preview`,
+  `2024-12-01`,
 }
 
 // Models ////////////////////
 
-@doc("An account is a parent resource for most of the other service resources. It's directly mapped to an ARM resource and helps to create a link between control-plane and data-plane resources.")
+@doc("An account is a parent resource for most of the other service resources. It's directly mapped to an Azure resource.")
 @resource("accounts")
 model Account {
   @key("accountId")
@@ -59,7 +60,7 @@ model Account {
   @visibility("read")
   id: string;
 
-  @doc("The ARM fully-qualified resource id for the account.")
+  @doc("The fully-qualified resource id for the account.")
   @visibility("read")
   resourceId: string;
 
@@ -71,11 +72,11 @@ model Account {
   @visibility("read")
   state: AccountState;
 
-  @doc("The ARM-based subscription id for the account.")
+  @doc("The Azure subscription id for the account.")
   @visibility("read")
   subscriptionId: uuid;
 
-  @doc("The ARM-based subscription state - Registered | Unregistered | Warned | Suspended | Deleted")
+  @doc("The Azure subscription state - Registered | Unregistered | Warned | Suspended | Deleted")
   @visibility("read")
   subscriptionState: SubscriptionState;
 
@@ -83,7 +84,7 @@ model Account {
   @visibility("read")
   tenantId: uuid;
 
-  @doc("The account resource ARM location, for eg. eastus, southeastasia.")
+  @doc("The account resource location in Azure, for eg. eastus, southeastasia.")
   @visibility("read")
   location: string;
 
@@ -111,7 +112,7 @@ union AccountState {
   "Inactive",
 }
 
-@doc("The ARM-based subscription state.")
+@doc("The Azure subscription state.")
 union SubscriptionState {
   string,
 
@@ -256,7 +257,7 @@ alias GetBrowsersResponse = {
 interface Accounts {
   // Accounts Operations
 
-  @doc("Get details of the ARM resource mapped to an account for the given accountId. Authorization required is Bearer JWT Access token provided by EntraID.")
+  @doc("Get details of the Azure resource mapped to an account for the given accountId. Authorization required is Bearer JWT Access token provided by EntraID.")
   @example("./Accounts_Get.json", "Accounts_Get")
   get is Operations.ResourceRead<Account>;
 

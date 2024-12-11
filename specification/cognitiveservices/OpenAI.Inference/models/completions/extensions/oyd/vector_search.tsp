@@ -7,29 +7,35 @@ using TypeSpec.Versioning;
 
 @added(ServiceApiVersions.v2024_02_15_Preview)
 @doc("""
-Represents the available sources Azure OpenAI On Your Data can use to configure vectorization of data for use with
-vector search.
-""")
+  Represents the available sources Azure OpenAI On Your Data can use to configure vectorization of data for use with
+  vector search.
+  """)
 union OnYourDataVectorizationSourceType {
   string,
 
   @doc("""
-  Represents vectorization performed by public service calls to an Azure OpenAI embedding model.
-  """)
+    Represents vectorization performed by public service calls to an Azure OpenAI embedding model.
+    """)
   endpoint: "endpoint",
 
   @doc("""
-  Represents an Ada model deployment name to use. This model deployment must be in the same Azure OpenAI resource, but
-  On Your Data will use this model deployment via an internal call rather than a public one, which enables vector
-  search even in private networks.
-  """)
+    Represents an Ada model deployment name to use. This model deployment must be in the same Azure OpenAI resource, but
+    On Your Data will use this model deployment via an internal call rather than a public one, which enables vector
+    search even in private networks.
+    """)
   deploymentName: "deployment_name",
 
   @doc("""
-  Represents a specific embedding model ID as defined in the search service.
-  Currently only supported by Elasticsearch®.
-  """)
+    Represents a specific embedding model ID as defined in the search service.
+    Currently only supported by Elasticsearch®.
+    """)
   modelId: "model_id",
+
+  @added(ServiceApiVersions.v2024_08_01_Preview)
+  @doc("""
+    Represents the integrated vectorizer defined within the search resource.
+    """)
+  integrated: "integrated",
 }
 
 @added(ServiceApiVersions.v2024_02_15_Preview)
@@ -42,9 +48,9 @@ model OnYourDataVectorizationSource {
 
 @added(ServiceApiVersions.v2024_02_15_Preview)
 @doc("""
-The details of a a vectorization source, used by Azure OpenAI On Your Data when applying vector search, that is based
-on a public Azure OpenAI endpoint call for embeddings.
-""")
+  The details of a a vectorization source, used by Azure OpenAI On Your Data when applying vector search, that is based
+  on a public Azure OpenAI endpoint call for embeddings.
+  """)
 model OnYourDataEndpointVectorizationSource
   extends OnYourDataVectorizationSource {
   @doc("The type of vectorization source to use. Always 'Endpoint' for this type.")
@@ -61,9 +67,9 @@ model OnYourDataEndpointVectorizationSource
 
 @added(ServiceApiVersions.v2024_02_15_Preview)
 @doc("""
-The details of a a vectorization source, used by Azure OpenAI On Your Data when applying vector search, that is based
-on an internal embeddings model deployment name in the same Azure OpenAI resource.
-""")
+  The details of a a vectorization source, used by Azure OpenAI On Your Data when applying vector search, that is based
+  on an internal embeddings model deployment name in the same Azure OpenAI resource.
+  """)
 model OnYourDataDeploymentNameVectorizationSource
   extends OnYourDataVectorizationSource {
   @doc("The type of vectorization source to use. Always 'DeploymentName' for this type.")
@@ -80,9 +86,9 @@ model OnYourDataDeploymentNameVectorizationSource
 
 @added(ServiceApiVersions.v2024_02_15_Preview)
 @doc("""
-The details of a a vectorization source, used by Azure OpenAI On Your Data when applying vector search, that is based
-on a search service model ID. Currently only supported by Elasticsearch®.
-""")
+  The details of a a vectorization source, used by Azure OpenAI On Your Data when applying vector search, that is based
+  on a search service model ID. Currently only supported by Elasticsearch®.
+  """)
 model OnYourDataModelIdVectorizationSource
   extends OnYourDataVectorizationSource {
   @doc("The type of vectorization source to use. Always 'ModelId' for this type.")
@@ -91,6 +97,16 @@ model OnYourDataModelIdVectorizationSource
   @doc("The embedding model ID build inside the search service. Currently only supported by Elasticsearch®.")
   @encodedName("application/json", "model_id")
   modelId: string;
+}
+
+@added(ServiceApiVersions.v2024_08_01_Preview)
+@doc("""
+  Represents the integrated vectorizer defined within the search resource.
+  """)
+model OnYourDataIntegratedVectorizationSource
+  extends OnYourDataVectorizationSource {
+  /** The type discriminator. ALways 'integrated'. */
+  type: OnYourDataVectorizationSourceType.integrated;
 }
 
 /** The authentication types supported with Azure OpenAI On Your Data vector search. */
