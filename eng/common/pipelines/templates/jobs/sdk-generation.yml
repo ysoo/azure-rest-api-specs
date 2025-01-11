@@ -62,7 +62,7 @@ jobs:
           Write-Host "##vso[task.setvariable variable=SpecRepoDirectory]$specRepoDirectory"
           Write-Host "SpecRepoDirectory variable set to: $specRepoDirectory"
         }
-        if ($env:BUILD_REASON) -eq 'PullRequest') {
+        if ($env:BUILD_REASON -eq 'PullRequest') {
           $specRepoBranchVar = $env:BUILD_SOURCEBRANCH
         } else {
           $specRepoBranchVar = '${{ parameters.SpecRepoBranch }}'
