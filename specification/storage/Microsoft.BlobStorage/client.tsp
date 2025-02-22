@@ -2,22 +2,9 @@ import "@azure-tools/typespec-client-generator-core";
 import "./main.tsp";
 
 using TypeSpec.Http;
+using Versioning;
 using Azure.ClientGenerator.Core;
 using Storage.Blob;
-
-namespace Customizations;
-
-/** Parameters to be added in client constructors */
-model BlobServiceClientParameters {
-  ...ContainerNamePathParameter;
-  ...BlobPathParameter;
-}
-
-@@clientInitialization(Storage.Blob.Blob, BlobServiceClientParameters);
-@@clientInitialization(Storage.Blob.AppendBlob, BlobServiceClientParameters);
-@@clientInitialization(Storage.Blob.BlockBlob, BlobServiceClientParameters);
-@@clientInitialization(Storage.Blob.PageBlob, BlobServiceClientParameters);
-@@clientInitialization(Storage.Blob.Container, ContainerNamePathParameter);
 
 @@clientName(ContainerProperties.denyEncryptionScopeOverride,
   "PreventEncryptionScopeOverride"
@@ -32,5 +19,47 @@ model BlobServiceClientParameters {
   "ImmutabilityPolicyExpiresOn"
 );
 
-@@clientName(MetadataHeaders, "metadata", "rust");
-@@clientName(ObjectReplicationHeaders, "objectReplicationHeaders", "rust");
+/** Parameters to be added in client constructors */
+model BlobServiceClientParameters {
+  ...ContainerNamePathParameter;
+  ...BlobPathParameter;
+}
+
+@@clientNamespace(Storage.Blob, "Azure.Storage.Blobs");
+@@clientNamespace(Storage.Blob.Blob, "Azure.Storage.Blobs");
+@@clientNamespace(Storage.Blob.Container, "Azure.Storage.Blobs");
+@@clientNamespace(Storage.Blob.AppendBlob, "Azure.Storage.Blobs");
+@@clientNamespace(Storage.Blob.BlockBlob, "Azure.Storage.Blobs");
+@@clientNamespace(Storage.Blob.PageBlob, "Azure.Storage.Blobs");
+
+@@clientName(Storage.Blob, "ServiceClient");
+@@clientInitialization(Storage.Blob.Blob,
+  {
+    parameters: BlobServiceClientParameters,
+    initializedBy: InitializedBy.parent | InitializedBy.individually,
+  }
+);
+@@clientInitialization(Storage.Blob.Container,
+  {
+    parameters: ContainerNamePathParameter,
+    initializedBy: InitializedBy.parent | InitializedBy.individually,
+  }
+);
+@@clientInitialization(Storage.Blob.AppendBlob,
+  {
+    parameters: BlobServiceClientParameters,
+    initializedBy: InitializedBy.parent | InitializedBy.individually,
+  }
+);
+@@clientInitialization(Storage.Blob.BlockBlob,
+  {
+    parameters: BlobServiceClientParameters,
+    initializedBy: InitializedBy.parent | InitializedBy.individually,
+  }
+);
+@@clientInitialization(Storage.Blob.PageBlob,
+  {
+    parameters: BlobServiceClientParameters,
+    initializedBy: InitializedBy.parent | InitializedBy.individually,
+  }
+);
