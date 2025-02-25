@@ -91,6 +91,12 @@
         "x-ms-examples": {
           "List the operations for the provider.": {
             "$ref": "./examples/Operations_List.json"
+          },
+          "Operations_List_MaximumSet_Gen": {
+            "$ref": "./examples/Operations_List_MaximumSet_Gen.json"
+          },
+          "Operations_List_MinimumSet_Gen": {
+            "$ref": "./examples/Operations_List_MinimumSet_Gen.json"
           }
         },
         "x-ms-pageable": {
@@ -130,6 +136,9 @@
         "x-ms-examples": {
           "Lists the Fleet resources in a subscription.": {
             "$ref": "./examples/Fleets_ListBySub.json"
+          },
+          "Fleets_ListBySubscription_MaximumSet_Gen": {
+            "$ref": "./examples/Fleets_ListBySubscription_MaximumSet_Gen.json"
           }
         },
         "x-ms-pageable": {
@@ -172,6 +181,9 @@
         "x-ms-examples": {
           "Lists the Fleet resources in a resource group.": {
             "$ref": "./examples/Fleets_ListByResourceGroup.json"
+          },
+          "Fleets_ListByResourceGroup_MaximumSet_Gen": {
+            "$ref": "./examples/Fleets_ListByResourceGroup_MaximumSet_Gen.json"
           }
         },
         "x-ms-pageable": {
@@ -224,6 +236,9 @@
         "x-ms-examples": {
           "Gets a Fleet resource.": {
             "$ref": "./examples/Fleets_Get.json"
+          },
+          "Fleets_Get_MaximumSet_Gen": {
+            "$ref": "./examples/Fleets_Get_MaximumSet_Gen.json"
           }
         }
       },
@@ -309,6 +324,9 @@
         "x-ms-examples": {
           "Creates a Fleet resource with a long running operation.": {
             "$ref": "./examples/Fleets_CreateOrUpdate.json"
+          },
+          "Fleets_CreateOrUpdate_MaximumSet_Gen": {
+            "$ref": "./examples/Fleets_CreateOrUpdate_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -391,6 +409,9 @@
         "x-ms-examples": {
           "Update a Fleet.": {
             "$ref": "./examples/Fleets_PatchTags.json"
+          },
+          "Fleets_Update_MaximumSet_Gen": {
+            "$ref": "./examples/Fleets_Update_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -464,6 +485,9 @@
         "x-ms-examples": {
           "Deletes a Fleet resource asynchronously with a long running operation.": {
             "$ref": "./examples/Fleets_Delete.json"
+          },
+          "Fleets_Delete_MaximumSet_Gen": {
+            "$ref": "./examples/Fleets_Delete_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -517,6 +541,9 @@
         "x-ms-examples": {
           "Lists the AutoUpgradeProfile resources by fleet.": {
             "$ref": "./examples/AutoUpgradeProfiles_ListByFleet.json"
+          },
+          "AutoUpgradeProfiles_ListByFleet_MaximumSet_Gen": {
+            "$ref": "./examples/AutoUpgradeProfiles_ListByFleet_MaximumSet_Gen.json"
           }
         },
         "x-ms-pageable": {
@@ -579,6 +606,9 @@
         "x-ms-examples": {
           "Gets an AutoUpgradeProfile resource.": {
             "$ref": "./examples/AutoUpgradeProfiles_Get.json"
+          },
+          "AutoUpgradeProfiles_Get_MaximumSet_Gen": {
+            "$ref": "./examples/AutoUpgradeProfiles_Get_MaximumSet_Gen.json"
           }
         }
       },
@@ -678,6 +708,9 @@
         "x-ms-examples": {
           "Create an AutoUpgradeProfile.": {
             "$ref": "./examples/AutoUpgradeProfiles_CreateOrUpdate.json"
+          },
+          "AutoUpgradeProfiles_CreateOrUpdate_MaximumSet_Gen": {
+            "$ref": "./examples/AutoUpgradeProfiles_CreateOrUpdate_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -758,6 +791,9 @@
         "x-ms-examples": {
           "Delete an AutoUpgradeProfile resource.": {
             "$ref": "./examples/AutoUpgradeProfiles_Delete.json"
+          },
+          "AutoUpgradeProfiles_Delete_MaximumSet_Gen": {
+            "$ref": "./examples/AutoUpgradeProfiles_Delete_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -846,7 +882,12 @@
         "x-ms-long-running-operation-options": {
           "final-state-via": "azure-async-operation"
         },
-        "x-ms-long-running-operation": true
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+          "AutoUpgradeProfileOperations_Generate_MaximumSet_Gen": {
+            "$ref": "./examples/AutoUpgradeProfileOperations_Generate_MaximumSet_Gen.json"
+          }
+        }
       }
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerService/fleets/{fleetName}/listCredentials": {
@@ -894,6 +935,9 @@
         "x-ms-examples": {
           "Lists the user credentials of a Fleet.": {
             "$ref": "./examples/Fleets_ListCredentialsResult.json"
+          },
+          "Fleets_ListCredentials_MaximumSet_Gen": {
+            "$ref": "./examples/Fleets_ListCredentials_MaximumSet_Gen.json"
           }
         }
       }
@@ -943,6 +987,9 @@
         "x-ms-examples": {
           "Lists the members of a Fleet.": {
             "$ref": "./examples/FleetMembers_ListByFleet.json"
+          },
+          "FleetMembers_ListByFleet_MaximumSet_Gen": {
+            "$ref": "./examples/FleetMembers_ListByFleet_MaximumSet_Gen.json"
           }
         },
         "x-ms-pageable": {
@@ -1005,6 +1052,9 @@
         "x-ms-examples": {
           "Gets a FleetMember resource.": {
             "$ref": "./examples/FleetMembers_Get.json"
+          },
+          "FleetMembers_Get_MaximumSet_Gen": {
+            "$ref": "./examples/FleetMembers_Get_MaximumSet_Gen.json"
           }
         }
       },
@@ -1100,6 +1150,9 @@
         "x-ms-examples": {
           "Creates a FleetMember resource with a long running operation.": {
             "$ref": "./examples/FleetMembers_Create.json"
+          },
+          "FleetMembers_Create_MaximumSet_Gen": {
+            "$ref": "./examples/FleetMembers_Create_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -1192,6 +1245,9 @@
         "x-ms-examples": {
           "Updates a FleetMember resource synchronously.": {
             "$ref": "./examples/FleetMembers_Update.json"
+          },
+          "FleetMembers_Update_MaximumSet_Gen": {
+            "$ref": "./examples/FleetMembers_Update_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -1275,6 +1331,9 @@
         "x-ms-examples": {
           "Deletes a FleetMember resource asynchronously with a long running operation.": {
             "$ref": "./examples/FleetMembers_Delete.json"
+          },
+          "FleetMembers_Delete_MaximumSet_Gen": {
+            "$ref": "./examples/FleetMembers_Delete_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -1328,6 +1387,9 @@
         "x-ms-examples": {
           "Lists the UpdateRun resources by fleet.": {
             "$ref": "./examples/UpdateRuns_ListByFleet.json"
+          },
+          "UpdateRuns_ListByFleet_MaximumSet_Gen": {
+            "$ref": "./examples/UpdateRuns_ListByFleet_MaximumSet_Gen.json"
           }
         },
         "x-ms-pageable": {
@@ -1390,6 +1452,9 @@
         "x-ms-examples": {
           "Gets an UpdateRun resource.": {
             "$ref": "./examples/UpdateRuns_Get.json"
+          },
+          "UpdateRuns_Get_MaximumSet_Gen": {
+            "$ref": "./examples/UpdateRuns_Get_MaximumSet_Gen.json"
           }
         }
       },
@@ -1485,6 +1550,9 @@
         "x-ms-examples": {
           "Create an UpdateRun.": {
             "$ref": "./examples/UpdateRuns_CreateOrUpdate.json"
+          },
+          "UpdateRuns_CreateOrUpdate_MaximumSet_Gen": {
+            "$ref": "./examples/UpdateRuns_CreateOrUpdate_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -1568,6 +1636,9 @@
         "x-ms-examples": {
           "Delete an updateRun resource.": {
             "$ref": "./examples/UpdateRuns_Delete.json"
+          },
+          "UpdateRuns_Delete_MaximumSet_Gen": {
+            "$ref": "./examples/UpdateRuns_Delete_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -1662,6 +1733,9 @@
         "x-ms-examples": {
           "Skips one or more member/group/stage/afterStageWait(s) of an UpdateRun.": {
             "$ref": "./examples/UpdateRuns_Skip.json"
+          },
+          "UpdateRuns_Skip_MaximumSet_Gen": {
+            "$ref": "./examples/UpdateRuns_Skip_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -1747,6 +1821,9 @@
         "x-ms-examples": {
           "Starts an UpdateRun.": {
             "$ref": "./examples/UpdateRuns_Start.json"
+          },
+          "UpdateRuns_Start_MaximumSet_Gen": {
+            "$ref": "./examples/UpdateRuns_Start_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -1832,6 +1909,9 @@
         "x-ms-examples": {
           "Stops an UpdateRun.": {
             "$ref": "./examples/UpdateRuns_Stop.json"
+          },
+          "UpdateRuns_Stop_MaximumSet_Gen": {
+            "$ref": "./examples/UpdateRuns_Stop_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -1885,6 +1965,9 @@
         "x-ms-examples": {
           "List the FleetUpdateStrategy resources by fleet.": {
             "$ref": "./examples/UpdateStrategies_ListByFleet.json"
+          },
+          "FleetUpdateStrategies_ListByFleet_MaximumSet_Gen": {
+            "$ref": "./examples/FleetUpdateStrategies_ListByFleet_MaximumSet_Gen.json"
           }
         },
         "x-ms-pageable": {
@@ -1947,6 +2030,9 @@
         "x-ms-examples": {
           "Get a FleetUpdateStrategy resource.": {
             "$ref": "./examples/UpdateStrategies_Get.json"
+          },
+          "FleetUpdateStrategies_Get_MaximumSet_Gen": {
+            "$ref": "./examples/FleetUpdateStrategies_Get_MaximumSet_Gen.json"
           }
         }
       },
@@ -2042,6 +2128,9 @@
         "x-ms-examples": {
           "Create a FleetUpdateStrategy.": {
             "$ref": "./examples/UpdateStrategies_CreateOrUpdate.json"
+          },
+          "FleetUpdateStrategies_CreateOrUpdate_MaximumSet_Gen": {
+            "$ref": "./examples/FleetUpdateStrategies_CreateOrUpdate_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
@@ -2125,6 +2214,9 @@
         "x-ms-examples": {
           "Delete a FleetUpdateStrategy resource.": {
             "$ref": "./examples/UpdateStrategies_Delete.json"
+          },
+          "FleetUpdateStrategies_Delete_MaximumSet_Gen": {
+            "$ref": "./examples/FleetUpdateStrategies_Delete_MaximumSet_Gen.json"
           }
         },
         "x-ms-long-running-operation-options": {
